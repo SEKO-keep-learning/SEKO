@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "846348477962",
+    "project_id": "seko-a4451",
+    "storage_bucket": "seko-a4451.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846348477962:android:aa9186ac656efcf86821f3",
+        "android_client_info": {
+          "package_name": "com.example.seko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846348477962-a3r9f2lt0l8btr19tp40mckglhkl910m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI2xV58sqGFm3LykiH_yVaOjAWZSoAMXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846348477962-a3r9f2lt0l8btr19tp40mckglhkl910m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
