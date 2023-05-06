@@ -28,13 +28,20 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
         val btnLogin : TextView = findViewById(R.id.btnLogin)
+        val btSignUp : TextView = findViewById(R.id.btSignUp)
         email = findViewById(R.id.emailSignIn)
         pass = findViewById(R.id.passSignIn)
+
         btnLogin.setOnClickListener{
             signIn()
         }
 
+        btSignUp.setOnClickListener{
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
     }
+
     private fun signIn(){
         val et_email : String = email?.text.toString().trim{ it <= ' '}
         val et_pass : String = pass?.text.toString().trim{ it <= ' '}
