@@ -13,7 +13,7 @@
 
     //APP
     <string name="username">Hello Kapil..</string>
-    <string name="cources">Cources We Offer</string>
+    <string name="cources">Courses We Offer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
