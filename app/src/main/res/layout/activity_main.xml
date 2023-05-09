@@ -94,7 +94,6 @@
                 android:backgroundTint="#4E525B"
                 android:elevation="0dp"
                 android:src="@drawable/round_arrow_forward_24"
-                android:tint="@android:color/white"
                 app:elevation="0dp"
                 app:fabCustomSize="80dp"
                 tools:ignore="RelativeOverlap" />
@@ -130,6 +129,7 @@
                 android:padding="15dp"
                 android:text="Sign up"
                 android:textSize="18sp"
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -141,6 +141,7 @@
                 android:padding="15dp"
                 android:text="Forgot Password"
                 android:textSize="18sp"
+                android:textColor="@android:color/black"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
