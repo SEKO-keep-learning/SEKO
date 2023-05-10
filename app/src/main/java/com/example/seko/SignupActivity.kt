@@ -9,11 +9,14 @@ import android.widget.Toast
 import com.example.seko.databinding.ActivityMainBinding
 import com.example.seko.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    val db = FirebaseFirestore.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +33,16 @@ class SignupActivity : AppCompatActivity() {
             if (name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        val user = hashMapOf(
+                            "name" to name,
+                            "email" to email,
+                            "password" to pass
+                        )
+                        db.collection("User")
+                            .add(user)
+                            .addOnSuccessListener { documentReference ->
                         val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                        startActivity(intent)}
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
                     }
