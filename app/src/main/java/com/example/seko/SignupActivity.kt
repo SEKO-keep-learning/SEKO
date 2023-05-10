@@ -11,7 +11,7 @@ import com.example.seko.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class SignupActivity : AppCompatActivity() {
+class SignupActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -26,6 +26,8 @@ class SignupActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.btnSignUp.setOnClickListener {
+
+            showProgressDialog(resources.getString(R.string.please_click_back_again_to_exit))
             val name = binding.nameRegister.text.toString()
             val email = binding.emailRegister.text.toString()
             val pass = binding.passwordRegister.text.toString()
@@ -41,14 +43,17 @@ class SignupActivity : AppCompatActivity() {
                         db.collection("User")
                             .add(user)
                             .addOnSuccessListener { documentReference ->
+
                         val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)}
+                        startActivity(intent)
+                                hideProgressDialog()
+                            }
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
+                        showErrorSnackBar(it.exception.toString())
                     }
                 }
             } else {
-                Toast.makeText(this, "Empty Fields are not allowed", Toast.LENGTH_LONG).show()
+                showErrorSnackBar("Empty Fields are not allowed")
             }
 
         }

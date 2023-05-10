@@ -51,8 +51,13 @@ class MainActivity : BaseActivity() {
 
 
         if (validate(et_email, et_pass)) {
+
+            showProgressDialog(resources.getString(R.string.please_click_back_again_to_exit))
             auth.signInWithEmailAndPassword(et_email, et_pass)
+
                 .addOnCompleteListener(this) { task ->
+
+
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("Sign in", "signInWithEmail:success")
@@ -65,11 +70,13 @@ class MainActivity : BaseActivity() {
                                 for (document in documents) {
                                     if(document.get("email") == et_email){
                                    val username = document.getString("name")
-
                                         val intent = Intent(this, content_Main::class.java)
                                         val Name = intent.putExtra("username", "$username")
+
                                         startActivity(intent)
+
                                         finish()
+                                        hideProgressDialog()
                                 }}
                             }
                             .addOnFailureListener { exception ->
@@ -82,8 +89,7 @@ class MainActivity : BaseActivity() {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("Sign in", "signInWithEmail:failure", task.exception)
-                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT)
-                            .show()
+                        showErrorSnackBar("Please enter the details properly or check Internet connection")
                         // updateUI(null)
                     }
                 }
