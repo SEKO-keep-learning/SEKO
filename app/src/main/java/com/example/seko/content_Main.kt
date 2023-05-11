@@ -11,7 +11,7 @@ class content_Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_content_main)
+        setContentView(R.layout.app_bar_main)
 
         val intent = getIntent()
         val value = intent.getStringExtra("username")
