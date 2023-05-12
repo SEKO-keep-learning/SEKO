@@ -25,17 +25,17 @@
 
     <color name="bottomNavigationTextColor">#B2B2B2</color>
     <color name="bottomNavigationTintColor">#B2B2B2</color>
-    <color name="bottomNavigationSelectedColor">#13D3B4</color>
+    <color name="bottomNavigationSelectedColor">#9D3C72</color>
     <color name="statusBarColor">#000</color>
     <color name="darkTextColor">#020000</color>
-    <color name="primaryTextColor">#13D3B4</color>
+    <color name="primaryTextColor">#9D3C72</color>
     <color name="whiteTextColor">#fff</color>
     <color name="frutorial_title">#4c4c4c</color>
 
     <!--    home designs main color-->
     <!--    will use the same color for all card and vectors, if you want to change this color, search the color code in vector files-->
-    <color name="designMainColor">#13D3B4</color>
-    <color name="imageBorderColor">#13D3B4</color>
+    <color name="designMainColor">#9D3C72</color>
+    <color name="imageBorderColor">#9D3C72</color>
     <color name="contentStatusBar">#fff</color>
     <color name="whiteBodyColor">#FCFCFC</color>
 

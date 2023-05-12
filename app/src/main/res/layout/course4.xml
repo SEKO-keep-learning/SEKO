@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/designMainColor"
+        app:cardBackgroundColor="#ECF2FF"
         app:cardCornerRadius="16dp">
 
         <ImageView
@@ -20,7 +20,7 @@
             android:cropToPadding="true"
             android:maxWidth="70dp"
             android:layout_margin="10dp"
-            android:src="@drawable/android_developer" />
+            android:src="@drawable/python" />
 
     </androidx.cardview.widget.CardView>
 
@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android Developer"
+            android:text="Python Programming"
             android:textColor="@color/miniTitle"
             android:textSize="20sp"
             android:textStyle="bold"
