@@ -16,6 +16,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:src="@drawable/arrouw_left"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileCircleImageView"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="@color/imageBorderColor"
+                android:src="@drawable/default_pic"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/textViewCourse"
             style="@style/viewParent.CourseName"
@@ -26,7 +48,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp">
 
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
@@ -37,10 +60,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -65,8 +84,6 @@
                             <include layout="@layout/index"></include>
 
                         </LinearLayout>
-
-                    </RelativeLayout>
 
 
                 </LinearLayout>
