@@ -35,18 +35,27 @@ class SignupActivity : BaseActivity() {
             if (name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val user = hashMapOf(
-                            "name" to name,
-                            "email" to email,
-                            "password" to pass
-                        )
-                        db.collection("User")
-                            .add(user)
-                            .addOnSuccessListener { documentReference ->
+                        firebaseAuth.currentUser?.sendEmailVerification()
+                            ?.addOnSuccessListener {
+                                Toast.makeText(this, "Please check you email for verification", Toast.LENGTH_LONG).show()
 
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
+                                val user = hashMapOf(
+                                    "name" to name,
+                                    "email" to email,
+                                    "password" to pass
+                                )
+                                db.collection("User")
+                                    .add(user)
+                                    .addOnSuccessListener { documentReference ->
+
+                                        val intent = Intent(this, MainActivity::class.java)
+                                        startActivity(intent)
+                                        hideProgressDialog()
+                                    }
+                            }
+                            ?.addOnFailureListener{
                                 hideProgressDialog()
+                                Toast.makeText(this, "Invalid Email", Toast.LENGTH_LONG).show()
                             }
                     } else {
                         showErrorSnackBar(it.exception.toString())

@@ -145,11 +145,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/course1"/>
-                <include layout="@layout/course2"/>
-                <include layout="@layout/course3"/>
-                <include layout="@layout/course4"/>
-                <include layout="@layout/course4"/>
+                <include layout="@layout/course1"
+                    android:id="@+id/c"/>
+                <include layout="@layout/course2"
+                    android:id="@+id/cpp"
+                    />
+                <include layout="@layout/course3"
+                    android:id="@+id/java"
+                    />
+                <include layout="@layout/course4"
+                    android:id="@+id/android"
+                    />
+                <include layout="@layout/course4"
+                    android:id="@+id/python"
+                    />
 
             </LinearLayout>
 

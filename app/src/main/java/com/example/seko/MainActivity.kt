@@ -62,32 +62,38 @@ class MainActivity : BaseActivity() {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("Sign in", "signInWithEmail:success")
                         val user = auth.currentUser
+                        if (!user!!.isEmailVerified) {
+
+                            hideProgressDialog()
+                            Toast.makeText(this,"Please verify your account first", Toast.LENGTH_LONG).show()
 
 
-                        db.collection("User").get()
-                            .addOnSuccessListener { collection ->
-                                val documents = collection.documents
-                                for (document in documents) {
-                                    if(document.get("email") == et_email){
-                                   val username = document.getString("name")
-                                        val intent = Intent(this, content_Main::class.java)
-                                        val Name = intent.putExtra("username", "$username")
+                        }
+                        else{
+                            db.collection("User").get()
+                                .addOnSuccessListener { collection ->
+                                    val documents = collection.documents
+                                    for (document in documents) {
+                                        if(document.get("email") == et_email){
+                                            val username = document.getString("name")
+                                            val intent = Intent(this, content_Main::class.java)
+                                            val Name = intent.putExtra("username", "$username")
 
-                                        startActivity(intent)
+                                            startActivity(intent)
 
-                                        finish()
-                                        hideProgressDialog()
-                                }}
-                            }
-                            .addOnFailureListener { exception ->
-                                // Handle any errors
-                            }
+                                            finish()
+                                        }}
+                                } .addOnFailureListener { exception ->
+                                    // Handle any errors
+                                }
 
+                        }
 
                         // updateUI(user)
                         // readData()
                     } else {
                         // If sign in fails, display a message to the user.
+                        hideProgressDialog()
                         Log.w("Sign in", "signInWithEmail:failure", task.exception)
                         showErrorSnackBar("Please enter the details properly or check Internet connection")
                         // updateUI(null)
