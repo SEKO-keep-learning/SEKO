@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/backButton"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/arrouw_left"/>
 
             <de.hdodenhof.circleimageview.CircleImageView

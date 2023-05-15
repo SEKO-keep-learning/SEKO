@@ -81,5 +81,6 @@
     <dimen name="courseTextSize">50sp</dimen>
     <dimen name="indexPaddingL">50dp</dimen>
     <dimen name="indexPaddingR">20dp</dimen>
+    <dimen name="indexPadding">30dp</dimen>
 
 </resources>

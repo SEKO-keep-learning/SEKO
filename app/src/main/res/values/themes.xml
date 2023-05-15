@@ -61,11 +61,12 @@
     </style>
 
     <style name="parent.indexlayout">
-        <item name="android:paddingLeft">@dimen/indexPaddingL</item>
-        <item name="android:paddingRight">@dimen/indexPaddingL</item>
+        <item name="android:padding">@dimen/indexPadding</item>
+<!--        <item name="android:paddingLeft">@dimen/indexPaddingL</item>-->
+<!--        <item name="android:paddingRight">@dimen/indexPaddingL</item>-->
 
-        <item name="android:paddingTop">@dimen/indexPaddingR</item>
-        <item name="android:paddingBottom">@dimen/indexPaddingR</item>
+<!--        <item name="android:paddingTop">@dimen/indexPaddingR</item>-->
+<!--        <item name="android:paddingBottom">@dimen/indexPaddingR</item>-->
     </style>
 
 </resources>
