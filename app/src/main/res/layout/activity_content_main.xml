@@ -146,7 +146,7 @@
                 android:orientation="vertical">
 
                 <include layout="@layout/course1"
-                    android:id="@+id/c"/>
+                   />
                 <include layout="@layout/course2"
                     android:id="@+id/cpp"
                     />

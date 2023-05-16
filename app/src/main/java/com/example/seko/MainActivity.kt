@@ -1,6 +1,7 @@
 package com.example.seko
 
 import android.content.Intent
+import com.example.seko.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
