@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.seko.databinding.ActivityMainBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -30,7 +31,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-        val btnLogin : TextView = findViewById(R.id.btnLogin)
+        val btnLogin : FloatingActionButton = findViewById(R.id.btnLogin)
         val btSignUp : TextView = findViewById(R.id.btSignUp)
         email = findViewById(R.id.emailSignIn)
         pass = findViewById(R.id.passSignIn)

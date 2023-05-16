@@ -16,10 +16,28 @@ class content_Main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.app_bar_main)
 
+        val android : CardView = findViewById(R.id.android)
+        val java : CardView = findViewById(R.id.java)
+        val cpp : CardView = findViewById(R.id.cpp)
         val cpl : LinearLayout = findViewById(R.id.cpl)
         cpl.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
             val language = intent.putExtra("language", "cpl")
+            startActivity(intent)
+        }
+        cpp.setOnClickListener{
+            val intent = Intent(this, content_index::class.java)
+            val language = intent.putExtra("language", "cpp")
+            startActivity(intent)
+        }
+        java.setOnClickListener{
+            val intent = Intent(this, content_index::class.java)
+            val language = intent.putExtra("language", "java")
+            startActivity(intent)
+        }
+        android.setOnClickListener{
+            val intent = Intent(this, content_index::class.java)
+            val language = intent.putExtra("language", "android")
             startActivity(intent)
         }
 

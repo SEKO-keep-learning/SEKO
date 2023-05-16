@@ -58,10 +58,12 @@ class SignupActivity : BaseActivity() {
                                 Toast.makeText(this, "Invalid Email", Toast.LENGTH_LONG).show()
                             }
                     } else {
+                        hideProgressDialog()
                         showErrorSnackBar(it.exception.toString())
                     }
                 }
             } else {
+                hideProgressDialog()
                 showErrorSnackBar("Empty Fields are not allowed")
             }
 
