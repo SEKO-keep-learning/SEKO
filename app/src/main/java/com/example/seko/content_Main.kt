@@ -3,6 +3,7 @@ package com.example.seko
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -15,7 +16,7 @@ class content_Main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.app_bar_main)
 
-        val cpl : CardView = findViewById(R.id.cpl)
+        val cpl : LinearLayout = findViewById(R.id.cpl)
         cpl.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
             val language = intent.putExtra("language", "cpl")
