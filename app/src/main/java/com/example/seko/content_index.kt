@@ -34,6 +34,8 @@ class content_index : AppCompatActivity() {
         val backButton : ImageView = findViewById(R.id.backButton)
 
 
+
+
         backButton.setOnClickListener{
             val intent = Intent(this, content_Main::class.java)
             startActivity(intent)
@@ -63,6 +65,7 @@ class content_index : AppCompatActivity() {
                 for(dc : DocumentChange in value?.documentChanges!!){
                     if(dc.type==DocumentChange.Type.ADDED){
                         TopicsArrayList.add(dc.document.toObject(index::class.java))
+
                     }
                 }
                 myAdapter.notifyDataSetChanged()

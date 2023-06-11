@@ -33,6 +33,7 @@ class MainActivity : BaseActivity() {
         auth = Firebase.auth
         val btnLogin : FloatingActionButton = findViewById(R.id.btnLogin)
         val btSignUp : TextView = findViewById(R.id.btSignUp)
+        val forgetBtn : TextView = findViewById(R.id.ForgetPass)
         email = findViewById(R.id.emailSignIn)
         pass = findViewById(R.id.passSignIn)
 
@@ -42,6 +43,10 @@ class MainActivity : BaseActivity() {
 
         btSignUp.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
+        forgetBtn.setOnClickListener{
+            val intent = Intent(this, ForgetPassword::class.java)
             startActivity(intent)
         }
     }
