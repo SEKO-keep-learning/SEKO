@@ -58,4 +58,10 @@
 
     //Index
     <string name="courseName">Introduction to C</string>
+    <string name="Compiler">Compiler</string>
+    <string name="Courses">Courses</string>
+    <string name="Home">Home</string>
+    <string name="Search">Search</string>
+    <string name="User">User</string>
+    <string name="Email">Email</string>
 </resources>
