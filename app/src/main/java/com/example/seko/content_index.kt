@@ -64,7 +64,7 @@ class content_index : AppCompatActivity() {
                 }
                 for(dc : DocumentChange in value?.documentChanges!!){
                     if(dc.type==DocumentChange.Type.ADDED){
-                        Topics
+                        TopicsArrayList.add(dc.document.toObject(index::class.java))
 
 
                     }
