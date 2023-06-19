@@ -66,6 +66,7 @@ class content_index : AppCompatActivity() {
                     if(dc.type==DocumentChange.Type.ADDED){
                         TopicsArrayList.add(dc.document.toObject(index::class.java))
 
+
                     }
                 }
                 myAdapter.notifyDataSetChanged()
