@@ -19,9 +19,9 @@ class content_Main : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.app_bar_main)
 
-        val android : CardView = findViewById(R.id.android)
-        val java : CardView = findViewById(R.id.java)
-        val cpp : CardView = findViewById(R.id.cpp)
+        val android : LinearLayout = findViewById(R.id.android)
+        val java : LinearLayout = findViewById(R.id.java)
+        val cpp : LinearLayout = findViewById(R.id.cpp)
         val cpl : LinearLayout = findViewById(R.id.cpl)
         cpl.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
