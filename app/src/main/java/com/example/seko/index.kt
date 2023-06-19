@@ -1,7 +1,7 @@
 package com.example.seko
 
 data class index(
-    var no : Number ? = null,
+    var no : String ? = null,
     var Topics : String ? = null
 )
 
