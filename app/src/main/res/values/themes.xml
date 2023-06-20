@@ -74,7 +74,8 @@
     </style>
 
     <!--styles for profile-->
-    <style name="AppTheme.ProfileTheme">
+<!--    <style name="AppTheme.ProfileTheme">-->
+    <style name="AppTheme" parent="android:Theme.Material">
         <item name="colorPrimaryDark">@color/profilePrimaryDark</item>
         <item name="colorAccent">@color/profileAccentColor</item>
         <item name="windowActionBar">false</item>
