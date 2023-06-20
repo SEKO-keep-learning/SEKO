@@ -64,4 +64,7 @@
     <string name="Search">Search</string>
     <string name="User">User</string>
     <string name="Email">Email</string>
+
+    //Profile
+    <string name="title_activity_profile">Profile</string>
 </resources>
