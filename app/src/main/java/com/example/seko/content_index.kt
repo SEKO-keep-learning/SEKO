@@ -16,6 +16,7 @@ import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -33,16 +34,9 @@ class content_index : AppCompatActivity() {
 
         val backButton : ImageView = findViewById(R.id.backButton)
 
-
-
-
         backButton.setOnClickListener{
-            val intent = Intent(this, content_Main::class.java)
-            startActivity(intent)
-            finish()
-
+           super.onBackPressed()
         }
-
          val intent = getIntent()
          val value = intent.getStringExtra("language")
         if(value == "cpl"){
@@ -56,16 +50,16 @@ class content_index : AppCompatActivity() {
 
         database = FirebaseFirestore.getInstance()
         database.collection("C").
-        addSnapshotListener(object : EventListener<QuerySnapshot>{
+            orderBy("Id", Query.Direction.ASCENDING).addSnapshotListener(object : EventListener<QuerySnapshot>{
             override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
                 if(error!=null){
                     Log.e("Firestore Error",error.message.toString())
                     return
                 }
                 for(dc : DocumentChange in value?.documentChanges!!){
+
                     if(dc.type==DocumentChange.Type.ADDED){
                         TopicsArrayList.add(dc.document.toObject(index::class.java))
-
 
                     }
                 }

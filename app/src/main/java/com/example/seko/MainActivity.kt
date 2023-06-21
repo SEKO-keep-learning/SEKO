@@ -1,5 +1,6 @@
 package com.example.seko
 
+import android.content.Context
 import android.content.Intent
 import com.example.seko.R
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +22,14 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : BaseActivity() {
 
-    private var email : EditText? = null
-    private var pass : EditText? = null
+    private companion object {
+        const val PREFS_NAME = "MyPrefsFile"
+        const val KEY_IS_LOGGED_IN = "isLoggedIn"
+        const val KEY_USERNAME = "username"
+    }
+
+    private var email: EditText? = null
+    private var pass: EditText? = null
     private val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
     val dab = FirebaseFirestore.getInstance()
@@ -31,29 +38,70 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         auth = Firebase.auth
-        val btnLogin : FloatingActionButton = findViewById(R.id.btnLogin)
-        val btSignUp : TextView = findViewById(R.id.btSignUp)
-        val forgetBtn : TextView = findViewById(R.id.ForgetPass)
+        val btnLogin: FloatingActionButton = findViewById(R.id.btnLogin)
+        val btSignUp: TextView = findViewById(R.id.btSignUp)
+        val forgetBtn: TextView = findViewById(R.id.ForgetPass)
         email = findViewById(R.id.emailSignIn)
         pass = findViewById(R.id.passSignIn)
 
-        btnLogin.setOnClickListener{
-            signIn()
-        }
+        showProgressDialog(resources.getString(R.string.please_click_back_again_to_exit))
 
-        btSignUp.setOnClickListener{
-            val intent = Intent(this, SignupActivity::class.java)
+        //Checking if the activity is already logged in or not
+        if (isLoggedIn()) {
+
+            val username = getUsername()
+            hideProgressDialog()
+            val intent = Intent(this, content_Main::class.java)
+            val Name = intent.putExtra("username", username)
             startActivity(intent)
-        }
-        forgetBtn.setOnClickListener{
-            val intent = Intent(this, ForgetPassword::class.java)
-            startActivity(intent)
+            finish()
+        } else {
+
+            hideProgressDialog()
+            // All buttons
+            btnLogin.setOnClickListener {
+                signIn()
+            }
+
+            btSignUp.setOnClickListener {
+                val intent = Intent(this, SignupActivity::class.java)
+                startActivity(intent)
+            }
+            forgetBtn.setOnClickListener {
+                val intent = Intent(this, ForgetPassword::class.java)
+                startActivity(intent)
+            }
+
         }
     }
 
-    private fun signIn(){
-        val et_email : String = email?.text.toString().trim{ it <= ' '}
-        val et_pass : String = pass?.text.toString().trim{ it <= ' '}
+    // saving username if already logged in
+    private fun saveUsername(username: String) {
+        // Retrieve the shared preferences
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+        // Get the shared preferences editor
+        val editor = prefs.edit()
+
+        // Store the username in shared preferences
+        editor.putString(KEY_USERNAME, username)
+
+        // Apply the changes
+        editor.apply()
+    }
+    //getting username if already logged in from saveUsername
+    private fun getUsername(): String {
+        // Retrieve the shared preferences
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+        // Retrieve the value of username from shared preferences
+        return prefs.getString(KEY_USERNAME, "") ?: ""
+    }
+
+    //Sign in function
+    private fun signIn() {
+        val et_email: String = email?.text.toString().trim { it <= ' ' }
+        val et_pass: String = pass?.text.toString().trim { it <= ' ' }
 
 
 
@@ -72,28 +120,36 @@ class MainActivity : BaseActivity() {
                         if (!user!!.isEmailVerified) {
 
                             hideProgressDialog()
-                            Toast.makeText(this,"Please verify your account first", Toast.LENGTH_LONG).show()
+                            Toast.makeText(
+                                this,
+                                "Please verify your account first",
+                                Toast.LENGTH_LONG
+                            ).show()
 
 
-                        }
-                        else{
+                        } else {
                             db.collection("User").get()
                                 .addOnSuccessListener { collection ->
                                     val documents = collection.documents
                                     for (document in documents) {
-                                        if(document.get("email") == et_email){
+                                        if (document.get("email") == et_email) {
+                                            saveLoggedInStatus(true)
                                             val username = document.getString("name")
+                                            if (username != null) {
+                                                saveUsername(username)
+                                            }
+
                                             val intent = Intent(this, content_Main::class.java)
                                             val Name = intent.putExtra("username", "$username")
 
                                             startActivity(intent)
 
                                             finish()
-                                        }}
-                                } .addOnFailureListener { exception ->
+                                        }
+                                    }
+                                }.addOnFailureListener { exception ->
                                     // Handle any errors
                                 }
-
                         }
 
                         // updateUI(user)
@@ -107,10 +163,33 @@ class MainActivity : BaseActivity() {
                     }
                 }
         }
-        }
+    }
+    // checking if logged in or not
+    private fun isLoggedIn(): Boolean {
+        // Retrieve the shared preferences
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    private fun validate(et_email : String, et_pass : String):Boolean{
-        return when{
+        // Retrieve the value of isLoggedIn from shared preferences
+        return prefs.getBoolean(KEY_IS_LOGGED_IN, false)
+    }
+//Saving the logged in status
+    private fun saveLoggedInStatus(isLoggedIn: Boolean) {
+        // Retrieve the shared preferences
+        val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
+
+        // Get the shared preferences editor
+        val editor = prefs.edit()
+
+        // Store the value of isLoggedIn in shared preferences
+        editor.putBoolean(KEY_IS_LOGGED_IN, isLoggedIn)
+
+        // Apply the changes
+        editor.apply()
+    }
+    //validating all the credentials
+    private fun validate(et_email: String, et_pass: String): Boolean {
+        return when {
             TextUtils.isEmpty(et_email) -> {
                 showErrorSnackBar("Please enter proper username")
                 false
@@ -125,6 +204,7 @@ class MainActivity : BaseActivity() {
         }
 
     }
+
 }
 
 

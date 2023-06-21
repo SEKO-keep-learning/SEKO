@@ -72,6 +72,7 @@
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/profileEmail"
                     android:text="developer@appsnipp.com"
                     android:layout_toRightOf="@id/emailImageView"
                     style="@style/profileDetailsMiniText" />

@@ -11,6 +11,7 @@ class MyAdapter(private val topicsList: ArrayList<index>) : RecyclerView.Adapter
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val Topics : TextView = itemView.findViewById(R.id.topics)
+        val num : TextView = itemView.findViewById(R.id.num)
 
     }
 
@@ -22,6 +23,7 @@ class MyAdapter(private val topicsList: ArrayList<index>) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = topicsList[position]
         holder.Topics.text = currentItem.Topics
+        holder.num.text = currentItem.Id
     }
 
     override fun getItemCount(): Int {

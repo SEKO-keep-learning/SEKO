@@ -27,8 +27,14 @@ class content_Main : AppCompatActivity() {
         val cpp : LinearLayout = findViewById(R.id.cpp)
         val cpl : LinearLayout = findViewById(R.id.cpl)
 
+        val intent = getIntent()
+        val value = intent.getStringExtra("username")
+        val textViewUser = findViewById<TextView>(R.id.textViewUser)
+        textViewUser.setText("Hello ${value}")
+
         profileCircleImageView.setOnClickListener{
             val intent = Intent(this, activity_profile::class.java)
+            val Name = intent.putExtra("username", "$value")
             startActivity(intent)
         }
         cpl.setOnClickListener{
@@ -53,10 +59,7 @@ class content_Main : AppCompatActivity() {
         }
 
 
-        val intent = getIntent()
-        val value = intent.getStringExtra("username")
-        val textViewUser = findViewById<TextView>(R.id.textViewUser)
-        textViewUser.setText("Hello ${value}")
+
 
 
     }
