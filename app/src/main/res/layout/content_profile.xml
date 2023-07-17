@@ -53,6 +53,7 @@
                     style="@style/profileDetailsTextMain"/>
 
                 <TextView
+                    android:id="@+id/ProfilePhone"
                     android:text="+91-8129999999"
                     android:layout_toRightOf="@id/mobileImageView"
                     style="@style/profileDetailsMiniText" />
@@ -92,6 +93,7 @@
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/profileAddress"
                     android:text="Avenue 2nd Street NW SY."
                     android:layout_toRightOf="@id/addressImageView"
                     style="@style/profileDetailsMiniText" />
@@ -111,6 +113,7 @@
                     style="@style/profileDetailsTextMain" />
 
                 <TextView
+                    android:id="@+id/dob"
                     android:text="12-05-1990"
                     android:layout_toRightOf="@id/dobImageView"
                     style="@style/profileDetailsMiniText" />

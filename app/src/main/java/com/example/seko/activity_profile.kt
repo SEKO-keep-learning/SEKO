@@ -17,6 +17,9 @@ class activity_profile : AppCompatActivity() {
         val back_home : TextView = findViewById(R.id.back_home)
         val profileEmail : TextView = findViewById(R.id.profileEmail)
         val nameTextView: TextView = findViewById(R.id.nameTextView)
+        val dob : TextView = findViewById(R.id.dob)
+        val profileAddress : TextView = findViewById(R.id.profileAddress)
+        val profilePhone : TextView = findViewById(R.id.ProfilePhone)
 
         val intent = getIntent()
         val value = intent.getStringExtra("username")
@@ -28,7 +31,14 @@ class activity_profile : AppCompatActivity() {
                 for (document in documents) {
                     if (document.get("name") == value) {
                         val email = document.getString("email")
+                        val phoneNo = document.getString("Phone")
+                        val Dob = document.getString("DOB")
+                        val profileAdd = document.getString("address")
                         profileEmail.setText("$email")
+                        profilePhone.setText("$phoneNo")
+                        dob.setText("$Dob")
+                        profileAddress.setText("$profileAdd")
+
 
                     }
                 }
