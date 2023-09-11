@@ -86,4 +86,6 @@
     <dimen name="text_margin">16dp</dimen>
 <!--    <dimen name="headerTextSize">28sp</dimen>-->
 
+    <dimen name="pading">20dp</dimen>
+
 </resources>

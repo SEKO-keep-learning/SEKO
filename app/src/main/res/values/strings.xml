@@ -67,4 +67,27 @@
 
     //Profile
     <string name="title_activity_profile">Profile</string>
+
+    //Content
+    <string name="c_language_string">C Language</string>
+    <string name="introduction_of_c_string">Introduction of C</string>
+    <string name="paragraph">C is a general-purpose programming language that was developed in the early 1970s by Dennis Ritchie at Bell Labs. <i>It is a procedural language</i>, meaning that programs are written as a sequence of instructions that are executed one at a time. C is also a compiled language, which means that the source code is converted into machine code before it is executed. This makes C very efficient, as it can be directly executed by the computer's processor.
+\n\n
+C is a powerful language that can be used to write a wide variety of programs, including operating systems, device drivers, embedded systems, and applications. It is also a relatively easy language to learn, making it a good choice for beginners.
+\n\n
+<b>Here are some of the key features of C:</b>
+\n\n
+•	Low-level access to memory: C allows programmers to access memory directly, which can be useful for writing efficient code.
+•	Portability: C code can be compiled for a wide variety of platforms, making it a good choice for developing portable applications.
+•	Speed: C code is typically very fast, as it can be directly executed by the computer's processor.
+•	Simplicity: C is a relatively simple language, making it easy to learn and use.
+C is a powerful and versatile language that is used for a wide variety of applications. It is a good choice for beginners who want to learn a powerful and efficient programming language.
+Here are some of the uses of C:
+•	Operating systems: C is the main language used to write operating systems, such as Linux, Unix, and Windows.
+•	Device drivers: C is used to write device drivers, which are programs that allow the operating system to interact with hardware devices.
+•	Embedded systems: C is used to write embedded systems, which are small, specialized computer systems that are used in devices such as cars, phones, and appliances.
+•	Applications: C can also be used to write applications, such as web browsers, games, and productivity software.
+
+</string>
+
 </resources>
