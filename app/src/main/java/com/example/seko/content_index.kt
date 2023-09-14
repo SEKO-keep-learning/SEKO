@@ -72,7 +72,7 @@ class content_index : AppCompatActivity() {
             startActivity(intent)
         }
 
-        if(value == "java"){
+        if(value == "python"){
 
             val intent = Intent(this, content_layout::class.java)
             startActivity(intent)

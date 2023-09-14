@@ -5,7 +5,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:id="@+id/cpp">
+        android:id="@+id/python">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CPP Programming"
+            android:text="Python"
             android:textColor="@color/miniTitle"
             android:textSize="20sp"
             android:textStyle="bold"

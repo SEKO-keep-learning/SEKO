@@ -24,7 +24,7 @@ class content_Main : AppCompatActivity() {
         val profileCircleImageView : ImageView =  findViewById(R.id.profileCircleImageView)
         val android : LinearLayout = findViewById(R.id.android)
         val java : LinearLayout = findViewById(R.id.java)
-        val cpp : LinearLayout = findViewById(R.id.cpp)
+        val cpp : LinearLayout = findViewById(R.id.python)
         val cpl : LinearLayout = findViewById(R.id.cpl)
 
         val intent = getIntent()
