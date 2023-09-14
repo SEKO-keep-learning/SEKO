@@ -68,15 +68,20 @@ class content_index : AppCompatActivity() {
 
         })}
         if(value == "cpp"){
-            Toast.makeText(this,"c++ content will be available soon", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, content_layout::class.java)
+            startActivity(intent)
         }
 
         if(value == "java"){
-            Toast.makeText(this,"Java content will be available soon", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, content_layout::class.java)
+            startActivity(intent)
         }
 
         if(value == "android"){
-            Toast.makeText(this,"Android content will be available soon", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, content_layout::class.java)
+            startActivity(intent)
         }
 
 
