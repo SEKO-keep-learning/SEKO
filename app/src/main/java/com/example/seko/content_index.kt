@@ -110,11 +110,17 @@ class content_index : AppCompatActivity() {
                         val context = intent.putExtra("python", "Introduction")
                         startActivity(intent)
                     }
+                    if(position == 0){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Expressions and Operator")
+                        startActivity(intent)
+                    }
                     if(position == 1){
                         val intent = Intent(this@content_index, content_layout::class.java)
                         val context = intent.putExtra("python", "Variables")
                         startActivity(intent)
                     }
+
                     if(position == 2){
                         val intent = Intent(this@content_index, content_layout::class.java)
                         val context = intent.putExtra("python", "Identifiers")
@@ -122,7 +128,7 @@ class content_index : AppCompatActivity() {
                     }
                     if(position == 3){
                         val intent = Intent(this@content_index, content_layout::class.java)
-                        val context = intent.putExtra("python", "Identifiers")
+                        val context = intent.putExtra("python", "Assignment Operators")
                         startActivity(intent)
                     }
                 }

@@ -24,7 +24,7 @@ class content_Main : AppCompatActivity() {
         val profileCircleImageView : ImageView =  findViewById(R.id.profileCircleImageView)
         val pythonL : LinearLayout = findViewById(R.id.android)
         val java : LinearLayout = findViewById(R.id.java)
-        val python : LinearLayout = findViewById(R.id.python)
+        val cpp : LinearLayout = findViewById(R.id.cpp)
         val cpl : LinearLayout = findViewById(R.id.cpl)
 
         val intent = getIntent()
@@ -42,7 +42,7 @@ class content_Main : AppCompatActivity() {
             val language = intent.putExtra("language", "cpl")
             startActivity(intent)
         }
-        python.setOnClickListener{
+        cpp.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
             val language = intent.putExtra("language", "python")
             startActivity(intent)
