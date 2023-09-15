@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/course1"
+                <include layout="@layout/course4"
                    />
                 <include layout="@layout/course2"
 
@@ -153,7 +153,7 @@
                 <include layout="@layout/course3"
 
                     />
-                <include layout="@layout/course4"
+                <include layout="@layout/course1"
 
                     />
 

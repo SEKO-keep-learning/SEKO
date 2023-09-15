@@ -8,7 +8,8 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/article_heading"
+
+        android:id="@+id/language_head"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -22,8 +23,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/intro_of_C"
-        android:layout_below="@id/article_heading"
+        android:id="@+id/Topic"
+        android:layout_below="@id/language_head"
         android:padding="@dimen/pading"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault"
         android:text="@string/introduction_of_c_string"
@@ -32,14 +33,13 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/intro_of_C"
+        android:layout_below="@+id/Topic"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/paragraph"
-            android:id="@+id/article"
-            android:layout_below="@+id/intro_of_C"
+            android:id="@+id/para"
+            android:layout_below="@+id/Topic"
             android:lineSpacingExtra="5sp"
             android:padding="@dimen/pading"
             />

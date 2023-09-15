@@ -27,11 +27,13 @@ class content_index : AppCompatActivity() {
     private lateinit var TopicsArrayList : ArrayList<index>
     private lateinit var database : FirebaseFirestore
     private lateinit var myAdapter: MyAdapter
+    private var textViewCourse : TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_index)
 
+        var textViewCourse : TextView = findViewById(R.id.textViewCourse)
         val backButton : ImageView = findViewById(R.id.backButton)
 
         backButton.setOnClickListener{
@@ -40,6 +42,7 @@ class content_index : AppCompatActivity() {
          val intent = getIntent()
          val value = intent.getStringExtra("language")
         if(value == "cpl"){
+            textViewCourse.setText("Introduction to C")
         recyclerView = findViewById(R.id.indexView)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
@@ -67,19 +70,69 @@ class content_index : AppCompatActivity() {
             }
 
         })}
-        if(value == "cpp"){
-            val intent = Intent(this, content_layout::class.java)
-            startActivity(intent)
-        }
 
         if(value == "python"){
+            textViewCourse.setText("Introduction to Python")
+            recyclerView = findViewById(R.id.indexView)
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.setHasFixedSize(true)
 
-            val intent = Intent(this, content_layout::class.java)
-            startActivity(intent)
+            TopicsArrayList = arrayListOf()
+
+            var myAdapter = MyAdapter(TopicsArrayList)
+            recyclerView.adapter = myAdapter
+
+
+            database = FirebaseFirestore.getInstance()
+            database.collection("Python").
+            orderBy("Id", Query.Direction.ASCENDING).addSnapshotListener(object : EventListener<QuerySnapshot>{
+                override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {
+                    if(error!=null){
+                        Log.e("Firestore Error",error.message.toString())
+                        return
+                    }
+                    for(dc : DocumentChange in value?.documentChanges!!){
+
+                        if(dc.type==DocumentChange.Type.ADDED){
+                            TopicsArrayList.add(dc.document.toObject(index::class.java))
+
+                        }
+                    }
+                    myAdapter.notifyDataSetChanged()
+                }
+
+
+            })
+            myAdapter.setOnItemClickListner(object : MyAdapter.onItemClickListner{
+                override fun onItemClick(position: Int) {
+                    if(position == 11){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Introduction")
+                        startActivity(intent)
+                    }
+                    if(position == 1){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Variables")
+                        startActivity(intent)
+                    }
+                    if(position == 2){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Identifiers")
+                        startActivity(intent)
+                    }
+                    if(position == 3){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Identifiers")
+                        startActivity(intent)
+                    }
+                }
+
+            })
         }
 
-        if(value == "android"){
 
+        if(value == "android"){
+            textViewCourse.setText("Introduction to Python")
             val intent = Intent(this, content_layout::class.java)
             startActivity(intent)
         }

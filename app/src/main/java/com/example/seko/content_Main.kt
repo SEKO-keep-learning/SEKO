@@ -22,9 +22,9 @@ class content_Main : AppCompatActivity() {
         setContentView(R.layout.app_bar_main)
 
         val profileCircleImageView : ImageView =  findViewById(R.id.profileCircleImageView)
-        val android : LinearLayout = findViewById(R.id.android)
+        val pythonL : LinearLayout = findViewById(R.id.android)
         val java : LinearLayout = findViewById(R.id.java)
-        val cpp : LinearLayout = findViewById(R.id.python)
+        val python : LinearLayout = findViewById(R.id.python)
         val cpl : LinearLayout = findViewById(R.id.cpl)
 
         val intent = getIntent()
@@ -42,9 +42,9 @@ class content_Main : AppCompatActivity() {
             val language = intent.putExtra("language", "cpl")
             startActivity(intent)
         }
-        cpp.setOnClickListener{
+        python.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
-            val language = intent.putExtra("language", "cpp")
+            val language = intent.putExtra("language", "python")
             startActivity(intent)
         }
         java.setOnClickListener{
@@ -52,9 +52,9 @@ class content_Main : AppCompatActivity() {
             val language = intent.putExtra("language", "java")
             startActivity(intent)
         }
-        android.setOnClickListener{
+        pythonL.setOnClickListener{
             val intent = Intent(this, content_index::class.java)
-            val language = intent.putExtra("language", "android")
+            val language = intent.putExtra("language", "python")
             startActivity(intent)
         }
 

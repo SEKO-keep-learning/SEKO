@@ -15,6 +15,10 @@
         android:theme="@style/Theme.SEKO"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/optiondesign" />
+
         <activity
             android:name=".Quiz_layout"
             android:exported="false" />
