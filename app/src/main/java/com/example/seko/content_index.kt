@@ -131,6 +131,44 @@ class content_index : AppCompatActivity() {
                         val context = intent.putExtra("python", "Assignment Operators")
                         startActivity(intent)
                     }
+                    if(position == 4){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Types Values and Expressions")
+                        startActivity(intent)
+                    }
+                    if(position == 5){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Introduction to Objects and Methods")
+                        startActivity(intent)
+                    }
+                    if(position == 6){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Conditional Statement")
+                        startActivity(intent)
+                    }
+                    if(position == 7){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Numeric Data Types")
+                        startActivity(intent)
+                    }
+                    if(position == 8){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Reading Strings from the Console")
+                        startActivity(intent)
+                    }
+                    if(position == 9){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Strings and Characters")
+                        startActivity(intent)
+                    }
+                    if(position == 10){
+                        val intent = Intent(this@content_index, content_layout::class.java)
+                        val context = intent.putExtra("python", "Flow Control Statement")
+                        startActivity(intent)
+                    }
+                    else{
+                        Toast.makeText(this@content_index,"Content not updated yet",Toast.LENGTH_LONG).show()
+                    }
                 }
 
             })

@@ -158,6 +158,204 @@ override fun onCreate(savedInstanceState: Bundle?) {
                 }
             }
     }
+    if(value == "Types Values and Expressions"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Types Values and Expressions") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+                        val content4 = document.getString("Content4")
+//                        val content5 = document.getString("Content5")
+//                        val content6 = document.getString("Content6")
+//                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3\n\n$content4")
+
+                    }
+                }
+            }
+    }
+    if(value == "Introduction to Objects and Methods"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Introduction to Objects and Methods") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+//                        val content4 = document.getString("Content4")
+//                        val content5 = document.getString("Content5")
+//                        val content6 = document.getString("Content6")
+//                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3")
+
+                    }
+                }
+            }
+    }
+    if(value == "Conditional Statement"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Introduction to Objects and Methods") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+                        val content4 = document.getString("Content4")
+                        val content5 = document.getString("Content5")
+                        val content6 = document.getString("Content6")
+                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3\n\n$content4\n\n$content5\n\n$content6\n\n$content7")
+
+                    }
+                }
+            }
+    }
+    if(value == "Numeric Data Types"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Numeric Data Types") {
+
+
+                        val content = document.getString("Content")
+//                        val content1 = document.getString("Content1")
+//                        val content2 = document.getString("Content2")
+//                        val content3 = document.getString("Content3")
+//                        val content4 = document.getString("Content4")
+//                        val content5 = document.getString("Content5")
+//                        val content6 = document.getString("Content6")
+//                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content")
+
+                    }
+                }
+            }
+    }
+
+    if(value == "Reading Strings from the Console"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Reading Strings from the Console") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+                        val content4 = document.getString("Content4")
+                        val content5 = document.getString("Content5")
+                        val content6 = document.getString("Content6")
+//                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3\n\n$content4\n\n$content5\n\n$content6")
+
+                    }
+                }
+            }
+    }
+    if(value == "Strings and Characters"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Strings and Characters") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+                        val content4 = document.getString("Content4")
+                        val content5 = document.getString("Content5")
+                        val content6 = document.getString("Content6")
+                        val content7 = document.getString("Content7")
+                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3\n\n$content4\n\n$content5\n\n$content6\n\n$content7" +
+                                "\n\n$content8")
+
+                    }
+                }
+            }
+    }
+    if(value == "Flow Control Statement"){
+
+        topic.setText("$value")
+        db.collection("Python").get()
+            .addOnSuccessListener { collection ->
+                val documents = collection.documents
+                for (document in documents) {
+                    if (document.get("Topics") == "Flow Control Statement") {
+
+
+                        val content = document.getString("Content")
+                        val content1 = document.getString("Content1")
+                        val content2 = document.getString("Content2")
+                        val content3 = document.getString("Content3")
+                        val content4 = document.getString("Content4")
+                        val content5 = document.getString("Content5")
+//                        val content6 = document.getString("Content6")
+//                        val content7 = document.getString("Content7")
+//                        val content8 = document.getString("Content8")
+//                        val content9 = document.getString("Content9")
+//                        val content10 = document.getString("Content10")
+//                        val content11 = document.getString("Content11")
+                        Content.setText("$content\n\n$content1\n\n$content2\n\n$content3\n\n$content4\n\n$content5")
+
+                    }
+                }
+            }
+    }
     }
 
 }

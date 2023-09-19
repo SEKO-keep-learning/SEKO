@@ -22,7 +22,7 @@
         android:title="@string/Search" />
 
     <item
-        android:id="@+id/navigationMyProfile"
+        android:id="@+id/navigationQuiz"
         android:icon="@drawable/ic_user"
         android:title="@string/User" />
 
